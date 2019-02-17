@@ -9,6 +9,6 @@ all: Fuzzer
 clean:
         rm -rf Fuzzer
 
-Fuzzer: fuzzer.cpp
+Fuzzer: macaddr-fuzz.cpp
 
-        $(CXX) -o macfuzz -g fuzzer.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -fsanitize=fuzzer,undefined -lfolly -lglog -lboost_system
+        $(CXX) -o macfuzz -g macaddr-fuzz.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -fsanitize=fuzzer,undefined -lfolly -lglog -lboost_system
