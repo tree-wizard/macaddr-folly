@@ -19,7 +19,7 @@ RUN apt-get install --yes g++     cmake     libboost-all-dev     libevent-dev   
 RUN git clone https://github.com/facebook/proxygen /root/proxygen/
 
 RUN git clone https://github.com/xxyyx/macaddr-folly /root/macaddr-folly
-RUN chmod +444 /root/macaddr-folly/deps.sh
+RUN chmod +777 /root/macaddr-folly/deps.sh
 RUN mv /root/macaddr-folly/deps.sh /root/proxygen/proxygen/deps.sh
 RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 RUN mv /root/macaddr-folly/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
