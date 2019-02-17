@@ -26,6 +26,7 @@ RUN mv /root/macaddr-folly/FollyConfigChecks.cmake /root/proxygen/proxygen/folly
 
 RUN mv /root/macaddr-folly/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
 RUN mv /root/macaddr-folly/replacements/MacAddress.cpp /root/proxygen/proxygen/folly/folly/MacAddress.cpp
+RUN mv /root/macaddr-folly/replacements/Range.h /root/proxygen/proxygen/folly/folly/Range.h
 
 #RUN ./deps.sh
 # RUN ldconfig
