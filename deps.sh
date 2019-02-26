@@ -74,13 +74,8 @@ git checkout "$folly_rev"
 # Build folly
 mkdir -p _build
 cd _build
-CXX=clang++-6.0 CXXFLAGS='-fPIC -g -fsanitize=fuzzer-no-link,undefined' cmake configure .. -DBUILD_SHARED_LIBS=ON
+CXX=clang++-6.0 CXXFLAGS='-fPIC -g -fsanitize=fuzzer-no-link' cmake configure .. -DFOLLY_ASAN_ENABLED=1 -DFOLLY_USE_SYMBOLIZER=1 -DBUILD_SHARED_LIBS=ON
 #cmake configure .. -DBUILD_SHARED_LIBS=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 make -j$JOBS
 make install
 
-if test $? -ne 0; then
-  echo "fatal: folly build failed"
-  exit -1
-fi
-cd ../..
