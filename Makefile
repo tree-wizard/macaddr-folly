@@ -11,4 +11,4 @@ clean:
 
 Fuzzer: macaddr-fuzz.cpp
 
-        $(CXX) -o macfuzz -g macaddr-fuzz.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -fsanitize=fuzzer,undefined -lfolly -lglog -lboost_system
+        $(CXX) -o macfuzz -g macaddr-fuzz.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -fsanitize=fuzzer,address,undefined -lfolly -lglog -lboost_system
