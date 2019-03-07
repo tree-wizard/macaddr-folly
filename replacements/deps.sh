@@ -64,13 +64,11 @@ fi
 
 # Get folly to newest release
 cd folly
-git fetch
-git checkout "$folly_rev"
 
 # Build folly
 mkdir -p _build
 cd _build
-CXX=clang++-6.0 CXXFLAGS='-ggdb -fsanitize=fuzzer-no-link' cmake configure .. -DFOLLY_ASAN_ENABLED=1 -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DFOLLY_USE_SYMBOLIZER=1 -DBUILD_SHARED_LIBS=ON
+CXX=clang++-7 CXXFLAGS='-ggdb -fsanitize=fuzzer-no-link' cmake configure .. -DFOLLY_ASAN_ENABLED=1 -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DFOLLY_USE_SYMBOLIZER=1 -DBUILD_SHARED_LIBS=ON
 #cmake configure .. -DBUILD_SHARED_LIBS=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 make -j$JOBS
 make install
