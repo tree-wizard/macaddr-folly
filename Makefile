@@ -1,7 +1,6 @@
 CC=clang-6.0
 CXX=clang++-6.0
 
-
 FOLLY=/root/proxygen/proxygen/folly
 
 all: Fuzzer
