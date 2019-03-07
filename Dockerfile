@@ -22,7 +22,7 @@ RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 
 #download and replace files.
 RUN git clone https://github.com/xxyyx/macaddr-folly /root/macaddr-folly
-RUN chmod +777 /root/macaddr-folly/deps.sh
+RUN chmod +777 /root/macaddr-folly/replacements/deps.sh
 
 
 RUN mv /root/macaddr-folly/replacements/deps.sh /root/proxygen/proxygen/deps.sh
