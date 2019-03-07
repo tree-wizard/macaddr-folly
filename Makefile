@@ -1,5 +1,5 @@
-CC=clang-6.0
-CXX=clang++-6.0
+CC=clang-7
+CXX=clang++-7
 
 FOLLY=/root/proxygen/proxygen/folly
 
