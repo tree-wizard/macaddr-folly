@@ -62,11 +62,7 @@ then
 fi
 
 
-# Get folly
-if [ ! -e folly/folly ]; then
-    echo "Cloning folly"
-    git clone https://github.com/facebook/folly
-fi
+# Get folly to newest release
 cd folly
 git fetch
 git checkout "$folly_rev"
